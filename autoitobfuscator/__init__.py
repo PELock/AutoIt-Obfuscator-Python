@@ -1,0 +1,1 @@
+from autoitobfuscator.autoitobfuscator import *
