@@ -6,7 +6,7 @@
 #
 # In this example we will obfuscate sample source with default options.
 #
-# Version        : v1.0
+# Version        : v1.04
 # Language       : Python
 # Author         : Bartosz Wójcik
 # Web page       : https://www.pelock.com
@@ -32,6 +32,26 @@ myAutoItObfuscator = AutoItObfuscator("ABCD-ABCD-ABCD-ABCD")
 # should the source code be compressed (both input & compressed)
 #
 myAutoItObfuscator.enableCompression = True
+
+#
+# detect debuggers attached to the application process
+#
+myAutoItObfuscator.antiDebug = True
+
+#
+# detect popular virtual machines
+#
+myAutoItObfuscator.antiVM = True
+
+#
+# detect sandboxes
+#
+myAutoItObfuscator.antiSandbox = True
+
+#
+# detect CPU emulators
+#
+myAutoItObfuscator.antiEmulator = True
 
 #
 # generate random integer values

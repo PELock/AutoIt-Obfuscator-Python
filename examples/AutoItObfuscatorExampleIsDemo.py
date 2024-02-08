@@ -6,7 +6,7 @@
 #
 # In this example we will verify our activation key status.
 #
-# Version        : v1.0
+# Version        : v1.04
 # Language       : Python
 # Author         : Bartosz Wójcik
 # Web page       : https://www.pelock.com

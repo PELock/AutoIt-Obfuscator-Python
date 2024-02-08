@@ -5,13 +5,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(name='autoitobfuscator',
 
-    version='1.0.3',
+    version='1.0.4',
 
     description='AutoIt Obfuscator Web API interface can help you to protect your AutoIt script source code against analysis, reverse engineering and decompilation. AutoIt Obfuscator provides advanced AutoIt source code parsing based on AST trees, multiple advanced obfuscation strategies are available.',
     long_description=long_description,
     long_description_content_type="text/markdown",
 
-    keywords = "autoit au3 obfuscator obfuscation obfuscate decompile decompiler decompilation",
+    keywords = "autoit au3 obfuscator obfuscation obfuscate decompile decompiler decompilation antidebug antivm antisandbox antiemulator",
 
     url='https://www.pelock.com',
 

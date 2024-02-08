@@ -9,7 +9,7 @@
 # AutoIt Obfuscator provides advanced AutoIt source code parsing based
 # on AST trees, multiple advanced obfuscation strategies are available.
 #
-# Version      : AutoItObfuscator v1.0
+# Version      : AutoItObfuscator v1.04
 # Python       : Python v3
 # Dependencies : requests (https://pypi.python.org/pypi/requests/)
 # Author       : Bartosz Wójcik (support@pelock.com)
@@ -42,7 +42,27 @@ class AutoItObfuscator(object):
     # 
     enableCompression = False
 
-    # 
+    #
+    # @var bool detect debuggers attached to the application process
+    #
+    antiDebug = False
+
+    #
+    # @var bool detect popular virtual machines
+    #
+    antiVM = False
+
+    #
+    # @var bool detect sandboxes
+    #
+    antiSandbox = False
+
+    #
+    # @var bool detect CPU emulators
+    #
+    antiEmulator = False
+
+    #
     # @var bool generate random integer values
     # 
     randomIntegers = False
@@ -172,6 +192,12 @@ class AutoItObfuscator(object):
         self._apiKey = api_key
         
         self.enableCompression = enable_all_obfuscation_options
+
+        self.antiDebug = enable_all_obfuscation_options
+        self.antiVM = enable_all_obfuscation_options
+        self.antiSandbox = enable_all_obfuscation_options
+        self.antiEmulator = enable_all_obfuscation_options
+
         self.randomIntegers = enable_all_obfuscation_options
         self.randomCharacters = enable_all_obfuscation_options
         self.randomAntiRegex = enable_all_obfuscation_options
@@ -244,6 +270,14 @@ class AutoItObfuscator(object):
 
         # add activation key to the parameters array
         if self._apiKey: params_array["key"] = self._apiKey
+
+        #
+        # detections
+        #
+        if self.antiDebug: params_array["anti_debug"] = "1"
+        if self.antiVM: params_array["anti_vm"] = "1"
+        if self.antiSandbox: params_array["anti_sandbox"] = "1"
+        if self.antiEmulator: params_array["anti_emulator"] = "1"
 
         #
         # random bucket setup
