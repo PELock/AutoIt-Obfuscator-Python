@@ -311,7 +311,7 @@ class AutoItObfuscator(object):
         if "source" in params_array and self.enableCompression and params_array["source"]:
 
             compressed_data = zlib.compress(bytes(params_array["source"], 'utf-8'), 9)
-            base64_encoded_data = base64.b64encode(compressed_data).decode()
+            base64_encoded_data = base64.b64encode(compressed_data)
 
             params_array["source"] = base64_encoded_data
             params_array["compression"] = "1"
